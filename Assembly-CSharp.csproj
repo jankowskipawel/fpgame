@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\C4mera.cs" />
     <Compile Include="Assets\Scripts\CustomAudioManager.cs" />
-    <Compile Include="Assets\Scripts\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerExperience.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -75,7 +74,9 @@
     <Compile Include="Assets\Scripts\ResourceClick.cs" />
     <Compile Include="Assets\Scripts\ResourcePopup.cs" />
     <Compile Include="Assets\Scripts\ResourceTextUI.cs" />
+    <Compile Include="Assets\Scripts\Sliders.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\UIHelper.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

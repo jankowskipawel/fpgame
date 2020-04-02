@@ -10,7 +10,6 @@
         <e p="Scripts" t="Include">
           <e p="C4mera.cs" t="Include" />
           <e p="CustomAudioManager.cs" t="Include" />
-          <e p="InventoryUI.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
           <e p="PlayerExperience.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
@@ -20,7 +19,9 @@
           <e p="ResourceClick.cs" t="Include" />
           <e p="ResourcePopup.cs" t="Include" />
           <e p="ResourceTextUI.cs" t="Include" />
+          <e p="Sliders.cs" t="Include" />
           <e p="Sound.cs" t="Include" />
+          <e p="UIHelper.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

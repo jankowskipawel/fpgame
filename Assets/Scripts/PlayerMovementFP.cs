@@ -77,6 +77,7 @@ public class PlayerMovementFP : MonoBehaviour
             Debug.Log("Sprint deactivated.");
         }
         
+        //CROUCH
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             controller.height = 1;
@@ -84,7 +85,6 @@ public class PlayerMovementFP : MonoBehaviour
             cameraView.transform.localPosition = new Vector3(0, 1f, 0);
             crouchedRecently = true;
         }
-        
         if (!Input.GetKey(KeyCode.LeftControl) && !isCellingAbove && crouchedRecently)
         {
             controller.height = 1.75f;
