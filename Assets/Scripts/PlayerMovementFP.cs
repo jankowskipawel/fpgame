@@ -54,6 +54,12 @@ public class PlayerMovementFP : MonoBehaviour
             velocity.y = (float)Math.Sqrt(jumpHeight * -2 * gravity);
         }
         
+        if (Input.GetKey(KeyCode.R))
+        {
+            velocity.y = 30;
+            Debug.Log("CHEAT JUMP used.");
+        }
+        
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }

@@ -28,6 +28,7 @@ public class Resource : MonoBehaviour
     public int ExpID;
     private PlayerExperience _playerExperience;
     public Collider meshCollider;
+    private bool isDepleted = false;
     
     void Start()
     {
@@ -56,23 +57,28 @@ public class Resource : MonoBehaviour
 
     private void Gather()
     {
-        _animator.SetTrigger("chop");
-        _playerResources.AddResource(resourceID, toolEfficiency);
-        resourceQuantity -= toolEfficiency;
-        _playerExperience.AddExp(ExpID, Convert.ToUInt64(toolEfficiency));
-        var popup = Instantiate(resourcePopup, transform.position, Quaternion.identity);
-        popup.GetComponent<ResourcePopup>().SetText(toolEfficiency);
-        popup.GetComponent<ResourcePopup>().SetIcon(icon);
-        if (resourceQuantity <= 0)
+        if (!isDepleted)
         {
-            audioManager.Play(GenerateSoundName(true, 1));
-            resource.SetActive(false);
-            depletedResource.SetActive(true);
-            StartRespawn();
-        }
-        else
-        {
-            audioManager.Play(GenerateSoundName(false, 3));
+            _animator.SetTrigger("chop");
+            _playerResources.AddResource(resourceID, toolEfficiency);
+            resourceQuantity -= toolEfficiency;
+            _playerExperience.AddExp(ExpID, Convert.ToUInt64(toolEfficiency));
+            var popup = Instantiate(resourcePopup, transform.position, Quaternion.identity);
+            popup.GetComponent<ResourcePopup>().SetText(toolEfficiency);
+            popup.GetComponent<ResourcePopup>().SetIcon(icon);
+            if (resourceQuantity <= 0)
+            {
+                audioManager.Play(GenerateSoundName(true, 1));
+                resource.SetActive(false);
+                depletedResource.SetActive(true);
+                meshCollider.isTrigger = true;
+                StartRespawn();
+                isDepleted = true;
+            }
+            else
+            {
+                audioManager.Play(GenerateSoundName(false, 3));
+            }
         }
     }
 
@@ -81,7 +87,9 @@ public class Resource : MonoBehaviour
         yield return new WaitForSeconds(respawnTime);
         resource.SetActive(true);
         depletedResource.SetActive(false);
-        resourceQuantity = maxQuantity + Convert.ToInt32(UnityEngine.Random.Range(-maxQuantity*0.3f, maxQuantity*0.3f)); 
+        resourceQuantity = maxQuantity + Convert.ToInt32(UnityEngine.Random.Range(-maxQuantity*0.3f, maxQuantity*0.3f));
+        meshCollider.isTrigger = false;
+        isDepleted = false;
     }
     
     public void StartRespawn()
