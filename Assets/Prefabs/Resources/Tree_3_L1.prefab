@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8375722124573997512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PineStump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 8375722125069801554}
   - component: {fileID: 8375722125069801552}
   - component: {fileID: 8375722125069801553}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8375722125133373882}
   - component: {fileID: 8375722125133373881}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree_3_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,6 +204,7 @@ MonoBehaviour:
     type: 3}
   icon: {fileID: 2800000, guid: 9ff52bad839a85d499d4266c703f346d, type: 3}
   ExpID: 0
+  meshCollider: {fileID: 8375722123547363463}
 --- !u!1001 &8375722123547363468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,12 +217,16 @@ PrefabInstance:
       value: Tree Type4 03
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 04abe54fa2063c249a36f6f53932ab22, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 04abe54fa2063c249a36f6f53932ab22, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04abe54fa2063c249a36f6f53932ab22, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 04abe54fa2063c249a36f6f53932ab22, type: 3}
       propertyPath: m_LocalPosition.x

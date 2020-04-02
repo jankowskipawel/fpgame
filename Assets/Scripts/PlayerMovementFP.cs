@@ -14,9 +14,15 @@ public class PlayerMovementFP : MonoBehaviour
     
     private Vector3 velocity;
     private bool isGrounded;
+    
+    private Animator _animator;
+    private static readonly int IsRunning = Animator.StringToHash("isRunning");
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
+
     }
 
     
@@ -33,7 +39,14 @@ public class PlayerMovementFP : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         
         Vector3 move = transform.right * x + transform.forward * z;
-
+        if (move.x != 0 || move.y != 0)
+        {
+            _animator.SetBool(IsRunning, true);
+        }
+        else
+        {
+            _animator.SetBool(IsRunning, false);
+        }
         controller.Move(Time.deltaTime * speed * move);
 
         if (Input.GetButton("Jump") && isGrounded)

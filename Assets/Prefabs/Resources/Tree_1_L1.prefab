@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7210193772142094672}
   - component: {fileID: 829063719811797804}
   - component: {fileID: 1278420036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpruceTree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7210193772538349997}
   - component: {fileID: 211665201}
-  m_Layer: 0
-  m_Name: Tree_1
+  m_Layer: 9
+  m_Name: Tree_1_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 7210193772538349996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.968542, y: 3.8128006, z: 10.019665}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5922699, y: 1.5922699, z: 1.5922699}
   m_Children:
   - {fileID: 7210193770888262946}
   - {fileID: 7507952121747673085}
@@ -176,6 +176,8 @@ MonoBehaviour:
   resourcePopup: {fileID: 1424413357198013949, guid: a850efeefb2b03f40a61252e24a0c801,
     type: 3}
   icon: {fileID: 2800000, guid: 9ff52bad839a85d499d4266c703f346d, type: 3}
+  ExpID: 0
+  meshCollider: {fileID: 829063719811797804}
 --- !u!1 &7507952121748034525
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7507952121747673085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PineStump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +220,7 @@ GameObject:
   - component: {fileID: 7507952121747673087}
   - component: {fileID: 7507952121746903007}
   - component: {fileID: 7507952121745771807}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

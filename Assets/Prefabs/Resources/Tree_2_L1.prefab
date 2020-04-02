@@ -96,6 +96,7 @@ MonoBehaviour:
     type: 3}
   icon: {fileID: 2800000, guid: 9ff52bad839a85d499d4266c703f346d, type: 3}
   ExpID: 0
+  meshCollider: {fileID: 365631531}
 --- !u!1 &5169288172651556594
 GameObject:
   m_ObjectHideFlags: 0
