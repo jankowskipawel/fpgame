@@ -13,9 +13,7 @@ using Random = System.Random;
 public class Resource : MonoBehaviour
 {
     private GameObject _player;
-    private PlayerMovement _playerMovement;
     private PlayerResources _playerResources;
-    private NavMeshAgent _playerNavMeshAgent;
     public GameObject resource;
     public GameObject depletedResource;
     private Animator _animator;
@@ -33,8 +31,6 @@ public class Resource : MonoBehaviour
     void Start()
     {
         _player = GameObject.Find("Player");
-        _playerMovement = _player.GetComponent<PlayerMovement>();
-        _playerNavMeshAgent = _player.GetComponent<NavMeshAgent>();
         _playerResources = _player.GetComponent<PlayerResources>();
         _playerExperience = _player.GetComponent<PlayerExperience>();
         resourceQuantity = maxQuantity + Convert.ToInt32(UnityEngine.Random.Range(-maxQuantity*0.3f, maxQuantity*0.3f));
@@ -48,54 +44,13 @@ public class Resource : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(_player.transform.position, 3f);
-        bool isNearObject = false;
-        foreach (var collider in hitColliders)
+        float distance = Vector3.Distance(_player.transform.position, transform.position);
+        if (distance < 4)
         {
-            if (collider == resource.GetComponent<Collider>())
-            {
-                isNearObject = true;
-            }
-        }
-
-        if (!isNearObject)
-        {
-            var targetPos = _playerMovement.MovePlayerToObjPos(gameObject, 0.8f);
-            //var coroutine = WaitAndGather(targetPos);
-            //StartCoroutine(coroutine);
-        }
-        else
-        {
-            _playerNavMeshAgent.ResetPath();
-            var q = Quaternion.LookRotation(transform.position - _player.transform.position);
-            _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, q, 200);
             Gather();
         }
     }
-    
-    
 
-    //go and activate
-    /*IEnumerator WaitAndGather(Vector3 targetpos)
-    {
-        float timeToReach = (_playerMovement.CalculatePathLength(targetpos)) / (_playerNavMeshAgent.speed);
-        yield return new WaitForSeconds(timeToReach);
-        Collider[] hitColliders = Physics.OverlapSphere(_player.transform.position, 3f);
-        bool isNearObject = false;
-        foreach (var collider in hitColliders)
-        {
-            if (collider == resource.GetComponent<Collider>())
-            {
-                isNearObject = true;
-            }
-        }
-
-        if (_playerMovement.IsPathCompleted() & isNearObject)
-        {
-            Gather();
-        }
-    }*/
-    
     private void Gather()
     {
         _animator.SetTrigger("chop");
@@ -110,7 +65,6 @@ public class Resource : MonoBehaviour
             audioManager.Play(GenerateSoundName(true, 1));
             resource.SetActive(false);
             depletedResource.SetActive(true);
-            _playerNavMeshAgent.ResetPath();
             StartRespawn();
         }
         else

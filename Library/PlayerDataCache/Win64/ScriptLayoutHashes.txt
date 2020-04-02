@@ -20,7 +20,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.P
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.TMP_PhoneNumberValidator
-419a4f87a03ea4784417a168f66bff8d Assembly-CSharp.dll:.C4mera
+da3f6529427e7a8f7c997032ac731069 Assembly-CSharp.dll:.C4mera
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 507174d46dacbc5fe45e28485db5dd1e UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -120,7 +120,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 e6f0efd0e20669d577e9d21526b3d3f9 Assembly-CSharp.dll:TMPro.Examples.WarpTextExample
-03aed9db2e7412876abcf8a0ac091a74 Assembly-CSharp.dll:.Resource
+36e62c3b5a791a7d20d8f8e90cc8ae09 Assembly-CSharp.dll:.Resource
 dd7520b7d4e690e8c593273e7b9fbe80 Assembly-CSharp.dll:TMPro.Examples.TMP_TextEventCheck
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 08ee418b801850b56a351565b9c8bb78 Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
@@ -191,9 +191,11 @@ a1ca1237bad0f30ea5ba8f4060929114 Assembly-CSharp.dll:TMPro.Examples.TMP_TextSele
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 27e5341178f188b89bdc6495710b590c Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
+22e60ca81be798c3927d3cd6847a5a54 Assembly-CSharp.dll:.ResourcePopup
 8a874a8207a7664bdf44e61f28717254 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 fe2d355deb0ca31d59a0a7cf4d141fc3 Assembly-CSharp.dll:TMPro.Examples.Benchmark04
+655675a941ea756088027703b43352a4 Assembly-CSharp.dll:.MouseLook
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 5bb0c23ac2810973880e592724a69354 Assembly-CSharp.dll:TMPro.Examples.Benchmark02
@@ -209,6 +211,7 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 0784d4fd5b93bd75440d01eb2fac4233 Assembly-CSharp.dll:TMPro.Examples.VertexShakeA
 8b1fe5dfdcf943fb3b72506b9f19335f Assembly-CSharp.dll:.EnvMapAnimator
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerExperience
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
+64afc5abb67df4a8667916b9c90e0ba4 Assembly-CSharp.dll:.PlayerMovementFP
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ResourceClick
-22e60ca81be798c3927d3cd6847a5a54 Assembly-CSharp.dll:.ResourcePopup
