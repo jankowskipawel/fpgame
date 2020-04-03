@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovementFP : MonoBehaviour
 {
     private CharacterController controller;
-    public float speed = 12f;
+    public float speed = 8f;
     public float gravity = -9.81f;
     public Transform groundCheck;
     public Transform cellingCheck;
@@ -17,16 +17,16 @@ public class PlayerMovementFP : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
     private bool isCellingAbove;
-    private bool crouchedRecently = false;
+    private bool isCrouching = false;
     
     private Animator _animator;
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
-
+    private float originalSpeed;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
-
+        originalSpeed = speed;
     }
 
     
@@ -66,32 +66,33 @@ public class PlayerMovementFP : MonoBehaviour
         }
         
         //SPRINT
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching)
         {
-            speed += 5;
+            speed = originalSpeed + 5;
             Debug.Log("Sprint activated.");
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching)
         {
-            speed -= 5;
+            speed = originalSpeed;
             Debug.Log("Sprint deactivated.");
         }
         
         //CROUCH
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isCrouching)
         {
             controller.height = 1;
             controller.center = new Vector3(0, 0.5f, 0);
             cameraView.transform.localPosition = new Vector3(0, 1f, 0);
-            crouchedRecently = true;
+            isCrouching = true;
+            speed = originalSpeed - 5;
         }
-        if (!Input.GetKey(KeyCode.LeftControl) && !isCellingAbove && crouchedRecently)
+        if (!Input.GetKey(KeyCode.LeftControl) && !isCellingAbove && isCrouching)
         {
             controller.height = 1.75f;
             controller.center = new Vector3(0, 0.9f, 0);
             cameraView.transform.localPosition = new Vector3(0, 1.75f, 0);
-            crouchedRecently = false;
-            Debug.Log($"{Time.deltaTime}");
+            isCrouching = false;
+            speed  = originalSpeed;
         }
         
         velocity.y += gravity * Time.deltaTime;
