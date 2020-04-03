@@ -20,9 +20,11 @@ public class ResourcePopup : MonoBehaviour
     {
         offset = Random.Range(-10, 10);
         ui = GameObject.FindGameObjectWithTag("UI");
-        transform.SetParent(ui.transform);
-        startingPos = new Vector3(Input.mousePosition.x+40, Input.mousePosition.y, 10);
-        endPos = new Vector3(startingPos.x+offset, startingPos.y + 50, startingPos.z);
+        Transform tmp = transform;
+        tmp.SetParent(ui.transform);
+        tmp.localPosition = Vector3.zero;
+        startingPos = tmp.position;
+        endPos = new Vector3(startingPos.x + offset, startingPos.y + 50, startingPos.z);
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class ResourcePopup : MonoBehaviour
         }
     }
 
-    public void SetText(float amount)
+    public void SetText(int amount)
     {
         text.text = $"+{amount}";
     }

@@ -21,7 +21,7 @@ public class Resource : MonoBehaviour
     public int resourceID;
     private int resourceQuantity;
     public int maxQuantity = 5;
-    private int toolEfficiency = 1;
+    private PlayerEquipment _playerEq;
     private CustomAudioManager audioManager;
     public GameObject resourcePopup;
     public Texture icon;
@@ -38,6 +38,7 @@ public class Resource : MonoBehaviour
         resourceQuantity = maxQuantity + Convert.ToInt32(UnityEngine.Random.Range(-maxQuantity*0.3f, maxQuantity*0.3f));
         _animator = _player.GetComponent<Animator>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<CustomAudioManager>();
+        _playerEq = _player.GetComponent<PlayerEquipment>();
     }
 
     void Update()
@@ -59,12 +60,23 @@ public class Resource : MonoBehaviour
     {
         if (!isDepleted)
         {
+            int toolEff = _playerEq.toolEfficiency;
             _animator.SetTrigger("chop");
-            _playerResources.AddResource(resourceID, toolEfficiency);
-            resourceQuantity -= toolEfficiency;
-            _playerExperience.AddExp(ExpID, Convert.ToUInt64(toolEfficiency));
-            var popup = Instantiate(resourcePopup, transform.position, Quaternion.identity);
-            popup.GetComponent<ResourcePopup>().SetText(toolEfficiency);
+            int gatherValue;
+            int tmp = resourceQuantity - toolEff;
+            if (tmp >= 0)
+            {
+                gatherValue = toolEff;
+            }
+            else
+            {
+                gatherValue = toolEff + tmp;
+            }
+            _playerResources.AddResource(resourceID, gatherValue);
+            resourceQuantity -= gatherValue;
+            _playerExperience.AddExp(ExpID, Convert.ToUInt64(gatherValue));
+            var popup = Instantiate(resourcePopup);
+            popup.GetComponent<ResourcePopup>().SetText(gatherValue);
             popup.GetComponent<ResourcePopup>().SetIcon(icon);
             if (resourceQuantity <= 0)
             {
