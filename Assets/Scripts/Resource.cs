@@ -50,7 +50,7 @@ public class Resource : MonoBehaviour
         Vector3 playerPosition = _player.transform.position;
         Vector3 closestPoint = meshCollider.ClosestPoint(playerPosition);
         float distance = Vector3.Distance(playerPosition, closestPoint);
-        if (distance < 3)
+        if (distance < 4)
         {
             Gather();
         }

@@ -54,7 +54,7 @@ public class PlayerMovementFP : MonoBehaviour
         }
         controller.Move(Time.deltaTime * speed * move);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && !isCellingAbove)
+        if (Input.GetButton("Jump") && isGrounded && !isCellingAbove)
         {
             velocity.y = (float)Math.Sqrt(jumpHeight * -2 * gravity);
         }
