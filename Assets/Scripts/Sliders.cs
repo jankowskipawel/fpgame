@@ -46,7 +46,7 @@ public class Sliders : MonoBehaviour
     
     public void FOVSliderValueChange()
     {
-        var tmp = FOVSlider.value;w
+        var tmp = FOVSlider.value;
         mainCamera.fieldOfView = tmp;
         FOVSliderText.text = $"{tmp}";
     }
