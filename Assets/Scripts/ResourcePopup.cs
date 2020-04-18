@@ -23,8 +23,9 @@ public class ResourcePopup : MonoBehaviour
         Transform tmp = transform;
         tmp.SetParent(ui.transform);
         tmp.localPosition = Vector3.zero;
+        tmp.rotation = ui.transform.rotation;
         startingPos = tmp.position;
-        endPos = new Vector3(startingPos.x + offset, startingPos.y + 50, startingPos.z);
+        endPos = new Vector3(startingPos.x + offset, startingPos.y + 50f, startingPos.z);
     }
 
     // Update is called once per frame
